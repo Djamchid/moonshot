@@ -1,0 +1,1182 @@
+{
+  "start": {
+    "title": "Prologue : Le Rêve Céleste",
+    "year": "1903 - Kaluga, Russie",
+    "text": "Vous êtes <span class=\"character\">Konstantin Tsiolkovski</span>, enseignant solitaire et visionnaire. Dans votre atelier, vous contemplez les étoiles et imaginez des voyages interplanétaires. Votre équation fondamentale vient de naître : la clé mathématique de la propulsion par fusée.",
+    "formula": "Δv = vₑ ln(m₀/m₁) - L'équation de Tsiolkovski",
+    "choices": [
+      { "text": "A. Publier immédiatement vos idées révolutionnaires", "next": "publish_early" },
+      { "text": "B. Perfectionner la théorie avant de la partager", "next": "refine_theory" },
+      { "text": "C. Chercher des soutiens financiers", "next": "seek_funding" },
+      { "text": "D. Construire un prototype simple", "next": "build_prototype" }
+    ],
+    "progress": 5
+  },
+
+  "publish_early": {
+    "title": "Les Premiers Pas",
+    "year": "1905 - Moscou",
+    "text": "Votre publication dans \"La Science et la Vie\" crée un petit émoi dans la communauté scientifique. Certains vous traitent de rêveur, d'autres voient le potentiel de vos idées.",
+    "choices": [
+      { "text": "A. Faire une conférence publique pour défendre vos idées", "next": "public_lecture" },
+      { "text": "B. Écrire un livre complet sur les voyages spatiaux", "next": "write_book" },
+      { "text": "C. Travailler sur un moteur à réaction pratique", "next": "jet_engine" }
+    ],
+    "progress": 10
+  },
+
+  "refine_theory": {
+    "title": "Perfectionnement Théorique",
+    "year": "1910 - Kaluga",
+    "text": "Pendant sept ans, vous perfectionnez vos théories : systèmes de guidage, combinaisons spatiales, stations orbitales. Vos cahiers débordent d'innovations qui devanceront votre époque.",
+    "formula": "Concepts : multi-étages, carburant liquide, scaphandres",
+    "choices": [
+      { "text": "A. Publier votre travail complet", "next": "publish_complete" },
+      { "text": "B. Chercher des applications militaires pour financer vos recherches", "next": "military_apps" },
+      { "text": "C. Envoyer vos travaux aux académies européennes", "next": "european_academies" },
+      { "text": "D. Construire un laboratoire de recherche", "next": "build_lab" }
+    ],
+    "progress": 12
+  },
+
+  "seek_funding": {
+    "title": "La Quête du Mécène",
+    "year": "1904 - Saint-Pétersbourg",
+    "text": "Vous parcourez les salons aristocratiques de Saint-Pétersbourg, cherchant un mécène pour vos idées. Vos théories fascinent mais semblent trop audacieuses pour l'époque.",
+    "choices": [
+      { "text": "A. Présenter vos idées à l'Académie des Sciences", "next": "european_academies" },
+      { "text": "B. Proposer des applications militaires", "next": "military_apps" },
+      { "text": "C. Chercher le soutien d'industriels visionnaires", "next": "build_lab" },
+      { "text": "D. Retourner à vos recherches solitaires", "next": "refine_theory" }
+    ],
+    "progress": 8
+  },
+
+  "build_prototype": {
+    "title": "L'Expérimentation",
+    "year": "1905 - Kaluga",
+    "text": "Dans votre atelier de fortune, vous construisez un petit modèle de fusée. Les premiers tests révèlent les défis pratiques : stabilité, combustion, matériaux. La théorie rencontre la réalité.",
+    "choices": [
+      { "text": "A. Perfectionner le prototype", "next": "tech_demonstrator" },
+      { "text": "B. Publier vos résultats expérimentaux", "next": "publish_early" },
+      { "text": "C. Construire un modèle plus grand", "next": "build_lab" },
+      { "text": "D. Abandonner l'expérimentation pour la théorie", "next": "refine_theory" }
+    ],
+    "progress": 8
+  },
+
+  "write_book": {
+    "title": "L'Exploration des Espaces Cosmiques",
+    "year": "1908 - Kaluga",
+    "text": "Votre livre \"L'Exploration des Espaces Cosmiques par des Appareils à Réaction\" devient un classique de la science-fiction scientifique. Il inspire une génération d'ingénieurs et de rêveurs.",
+    "choices": [
+      { "text": "A. Chercher des financements pour vos recherches", "next": "seek_funding" },
+      { "text": "B. Fonder une société savante", "next": "found_society" },
+      { "text": "C. Construire des modèles pour illustrer vos idées", "next": "tech_demonstrator" }
+    ],
+    "progress": 15
+  },
+
+  "jet_engine": {
+    "title": "Le Moteur à Réaction",
+    "year": "1906 - Kaluga",
+    "text": "Vous développez les premiers principes du moteur à réaction. Vos travaux attirent l'attention d'ingénieurs européens, notamment un certain Frank Whittle qui visite votre atelier.",
+    "choices": [
+      { "text": "A. Collaborer avec Whittle sur les applications aéronautiques", "next": "european_academies" },
+      { "text": "B. Garder vos recherches secrètes", "next": "secret_civil" },
+      { "text": "C. Proposer vos moteurs pour des applications militaires", "next": "military_apps" },
+      { "text": "D. Développer une fusée expérimentale", "next": "tech_demonstrator" }
+    ],
+    "progress": 18
+  },
+
+  "publish_complete": {
+    "title": "La Théorie Unifiée",
+    "year": "1912 - Europe",
+    "text": "Votre traité complet sur l'astronautique fait sensation dans les milieux scientifiques européens. Oberth, Esnault-Pelterie et Goddard citent vos travaux comme référence fondamentale.",
+    "formula": "Les trois pères de l'astronautique réunis par vos idées",
+    "choices": [
+      { "text": "A. Organiser un congrès international d'astronautique", "next": "found_society" },
+      { "text": "B. Collaborer avec Goddard sur les fusées à propergol liquide", "next": "scientific_rocket" },
+      { "text": "C. Conseiller les gouvernements sur les applications militaires", "next": "military_apps" },
+      { "text": "D. Créer une école d'ingénieurs spatiaux", "next": "build_lab" }
+    ],
+    "progress": 22
+  },
+
+  "military_apps": {
+    "title": "L'Arme du Futur",
+    "year": "1914 - Europe",
+    "text": "La Première Guerre mondiale éclate. Vos recherches sur les fusées intéressent soudainement les états-majors. Les missiles balistiques pourraient révolutionner la guerre.",
+    "choices": [
+      { "text": "A. Collaborer avec l'armée russe", "next": "continue_research" },
+      { "text": "B. Partir aux États-Unis comme consultant", "next": "surrender_us" },
+      { "text": "C. Maintenir vos recherches civiles en secret", "next": "secret_civil" },
+      { "text": "D. Protester contre l'usage militaire", "next": "protest_military" }
+    ],
+    "progress": 20
+  },
+
+  "european_academies": {
+    "title": "La Reconnaissance Internationale",
+    "year": "1911 - Paris",
+    "text": "L'Académie des Sciences de Paris accueille favorablement vos travaux. Vous rencontrez Robert Esnault-Pelterie qui travaille sur des idées similaires. Une collaboration internationale naît.",
+    "choices": [
+      { "text": "A. Créer un comité international d'astronautique", "next": "found_society" },
+      { "text": "B. Développer ensemble un programme de recherche", "next": "joint_project" },
+      { "text": "C. Chercher des financements gouvernementaux", "next": "seek_funding" },
+      { "text": "D. Publier vos travaux communs", "next": "publish_complete" }
+    ],
+    "progress": 20
+  },
+
+  "build_lab": {
+    "title": "Le Premier Centre Spatial",
+    "year": "1913 - Kaluga",
+    "text": "Vous créez le premier laboratoire au monde dédié à l'astronautique. Jeunes ingénieurs et inventeurs affluent vers votre centre. L'avenir spatial prend forme.",
+    "formula": "Premier centre de recherche spatiale au monde",
+    "choices": [
+      { "text": "A. Former une nouvelle génération d'ingénieurs", "next": "treatise" },
+      { "text": "B. Développer des prototypes avancés", "next": "tech_demonstrator" },
+      { "text": "C. Chercher des contrats gouvernementaux", "next": "military_apps" },
+      { "text": "D. Créer un programme d'échanges internationaux", "next": "european_academies" }
+    ],
+    "progress": 25
+  },
+
+  "public_lecture": {
+    "title": "Le Rêveur de Kaluga",
+    "year": "1906 - Saint-Pétersbourg",
+    "text": "Votre conférence publique attire une foule curieuse. Parmi les spectateurs, un jeune ingénieur allemand nommé Hermann Oberth prend des notes fiévreusement. Votre vision inspire une nouvelle génération.",
+    "choices": [
+      { "text": "A. Prendre Oberth comme étudiant", "next": "oberth_student" },
+      { "text": "B. Fonder une société d'astronautique", "next": "found_society" },
+      { "text": "C. Travailler sur un démonstrateur technique", "next": "tech_demonstrator" }
+    ],
+    "progress": 15
+  },
+
+  "found_society": {
+    "title": "La Société Astronautique Internationale",
+    "year": "1909 - Vienne",
+    "text": "Vous fondez la première société astronautique au monde. Oberth, Esnault-Pelterie et bientôt Goddard rejoignent vos rangs. L'astronautique devient une science reconnue.",
+    "choices": [
+      { "text": "A. Organiser des expéditions de recherche", "next": "joint_project" },
+      { "text": "B. Publier une revue scientifique spécialisée", "next": "treatise" },
+      { "text": "C. Chercher des financements pour des projets ambitieux", "next": "seek_funding" },
+      { "text": "D. Préparer des démonstrations publiques", "next": "tech_demonstrator" }
+    ],
+    "progress": 28
+  },
+
+  "tech_demonstrator": {
+    "title": "La Première Fusée",
+    "year": "1912 - Kaluga",
+    "text": "Votre fusée expérimentale s'élève à 100 mètres d'altitude, prouvant la validité de vos théories. Cette démonstration publique marque l'entrée de l'humanité dans l'ère des fusées.",
+    "formula": "Première fusée à combustible liquide : 100m d'altitude",
+    "choices": [
+      { "text": "A. Développer une fusée plus puissante", "next": "scientific_rocket" },
+      { "text": "B. Breveter votre technologie", "next": "continue_research" },
+      { "text": "C. Attirer des investisseurs privés", "next": "seek_funding" },
+      { "text": "D. Partager votre technologie avec d'autres inventeurs", "next": "joint_project" }
+    ],
+    "progress": 30
+  },
+
+  "oberth_student": {
+    "title": "Le Disciple",
+    "year": "1907 - Kaluga",
+    "text": "Oberth passe un an avec vous à développer vos idées. Ensemble, vous explorez les fusées à propergol liquide. Mais la Première Guerre mondiale approche...",
+    "choices": [
+      { "text": "A. L'encourager à retourner en Allemagne développer vos idées", "next": "oberth_germany" },
+      { "text": "B. Travailler sur des applications pacifiques", "next": "peaceful_apps" },
+      { "text": "C. Chercher des financements pour un projet commun", "next": "joint_project" },
+      { "text": "D. Préparer un traité complet sur l'astronautique", "next": "treatise" }
+    ],
+    "progress": 18
+  },
+
+  "peaceful_apps": {
+    "title": "La Voie Pacifique",
+    "year": "1908 - Kaluga",
+    "text": "Avec Oberth, vous développez des applications civiles : fusées météorologiques, communications par satellite, exploration scientifique. Votre vision pacifique de l'espace prend forme.",
+    "choices": [
+      { "text": "A. Développer des satellites de communication", "next": "science_satellites" },
+      { "text": "B. Concevoir une station spatiale internationale", "next": "space_station" },
+      { "text": "C. Former d'autres ingénieurs à vos méthodes", "next": "treatise" }
+    ],
+    "progress": 22
+  },
+
+  "joint_project": {
+    "title": "L'Alliance Scientifique",
+    "year": "1910 - Europe",
+    "text": "Votre collaboration avec Oberth et d'autres pionniers européens aboutit au premier projet spatial international. Les frontières s'effacent devant la conquête des étoiles.",
+    "choices": [
+      { "text": "A. Lancer le premier satellite artificiel", "next": "scientific_rocket" },
+      { "text": "B. Construire un centre de lancement international", "next": "build_lab" },
+      { "text": "C. Créer un traité spatial international", "next": "treatise" }
+    ],
+    "progress": 35
+  },
+
+  "treatise": {
+    "title": "Le Codex de l'Espace",
+    "year": "1915 - Kaluga",
+    "text": "Votre traité complet sur l'astronautique devient la bible des futurs ingénieurs spatiaux. Von Braun, Korolev et bien d'autres s'en inspireront pour conquérir l'espace.",
+    "formula": "Fondements théoriques de l'ère spatiale",
+    "choices": [
+      { "text": "A. Créer une école d'ingénieurs spatiaux", "next": "build_lab" },
+      { "text": "B. Développer des applications pratiques", "next": "tech_demonstrator" },
+      { "text": "C. Préparer la génération suivante", "next": "wernher_von_braun" }
+    ],
+    "progress": 32
+  },
+
+  "oberth_germany": {
+    "title": "La Graine Semée",
+    "year": "1914 - Allemagne",
+    "text": "Oberth retourne en Allemagne avec vos idées. La guerre éclate, et il est recruté pour travailler sur les armes. Vos théories prennent une tournure militaire inattendue.",
+    "choices": [
+      { "text": "A. Protester contre l'utilisation militaire", "next": "protest_military" },
+      { "text": "B. Continuer vos recherches théoriques", "next": "continue_research" },
+      { "text": "C. Travailler secrètement sur des projets civils", "next": "secret_civil" }
+    ],
+    "progress": 20
+  },
+
+  "protest_military": {
+    "title": "La Conscience du Scientifique",
+    "year": "1916 - Kaluga",
+    "text": "Vous dénoncez publiquement l'usage militaire de vos inventions. Cette prise de position vous vaut l'hostilité des autorités mais l'admiration des pacifistes internationaux.",
+    "choices": [
+      { "text": "A. Continuer vos recherches en secret", "next": "secret_civil" },
+      { "text": "B. Émigrer vers un pays neutre", "next": "surrender_us" },
+      { "text": "C. Rallier d'autres scientifiques à votre cause", "next": "peaceful_apps" }
+    ],
+    "progress": 18
+  },
+
+  "continue_research": {
+    "title": "La Persévérance",
+    "year": "1917 - Kaluga",
+    "text": "Malgré la guerre et les troubles, vous continuez vos recherches. La Révolution russe change la donne : les Bolcheviks s'intéressent à vos fusées pour l'industrialisation.",
+    "choices": [
+      { "text": "A. Collaborer avec le nouveau régime", "next": "soviet_program" },
+      { "text": "B. Émigrer aux États-Unis", "next": "surrender_us" },
+      { "text": "C. Maintenir votre indépendance", "next": "secret_civil" },
+      { "text": "D. Transmettre vos connaissances à l'étranger", "next": "european_academies" }
+    ],
+    "progress": 25
+  },
+
+  "secret_civil": {
+    "title": "Le Laboratoire Clandestine",
+    "year": "1918 - Kaluga",
+    "text": "Vous développez secrètement des technologies spatiales civiles : satellites météo, sondes d'exploration, systèmes de navigation. Votre vision pacifique de l'espace survit aux guerres.",
+    "choices": [
+      { "text": "A. Révéler vos travaux après la guerre", "next": "post_war" },
+      { "text": "B. Créer un réseau international de chercheurs", "next": "joint_project" },
+      { "text": "C. Développer des prototypes fonctionnels", "next": "tech_demonstrator" }
+    ],
+    "progress": 28
+  },
+
+  "soviet_program": {
+    "title": "L'Étoile Rouge",
+    "year": "1925 - Union Soviétique",
+    "text": "Vous devenez le père du programme spatial soviétique. Vos idées inspirent Korolev et ses équipes. L'URSS prend une avance décisive dans la course spatiale.",
+    "choices": [
+      { "text": "A. Développer le programme Spoutnik", "next": "sputnik_shock" },
+      { "text": "B. Concevoir des fusées lunaires", "next": "lunar_rocket" }
+    ],
+    "progress": 40
+  },
+
+  "wernher_von_braun": {
+    "title": "Chapitre 2 : Les Armes de la Nuit",
+    "year": "1937 - Peenemünde, Allemagne",
+    "text": "Vous êtes maintenant <span class=\"character\">Wernher von Braun</span>, jeune prodige de 25 ans. Sous le régime nazi, vous dirigez le développement de l'arme secrète : l'Aggregat 4, plus tard connu sous le nom de V2.",
+    "formula": "V2 : 320 km de portée, altitude 80 km, vitesse Mach 4",
+    "choices": [
+      { "text": "A. Maximiser la performance technique", "next": "max_performance" },
+      { "text": "B. Saboter discrètement le programme", "next": "sabotage" },
+      { "text": "C. Préparer l'après-guerre et les applications spatiales", "next": "post_war" }
+    ],
+    "progress": 30
+  },
+
+  "sabotage": {
+    "title": "La Résistance Silencieuse",
+    "year": "1942 - Peenemünde",
+    "text": "Vous sabotez subtilement le programme V2 : retards de production, défauts de conception mineurs, fuites d'informations aux Alliés. Votre conscience l'emporte sur l'efficacité.",
+    "choices": [
+      { "text": "A. Préparer votre évasion", "next": "surrender_us" },
+      { "text": "B. Rallier d'autres ingénieurs à votre cause", "next": "secret_civil" },
+      { "text": "C. Survivre jusqu'à la fin de la guerre", "next": "post_war" }
+    ],
+    "progress": 32
+  },
+
+  "max_performance": {
+    "title": "L'Arme de Représailles",
+    "year": "1944 - Allemagne",
+    "text": "Votre équipe crée une arme révolutionnaire. Plus de 3 000 V2 seront lancés, faisant des milliers de victimes. Mais techniquement, vous avez prouvé que les fusées peuvent atteindre l'espace.",
+    "choices": [
+      { "text": "A. Planifier secrètement la reddition aux Américains", "next": "surrender_us" },
+      { "text": "B. Développer une version spatiale", "next": "space_version" },
+      { "text": "C. Documenter tout votre travail pour l'après-guerre", "next": "document_work" }
+    ],
+    "progress": 35
+  },
+
+  "space_version": {
+    "title": "A4b : Le Rêve Spatial Nazi",
+    "year": "1945 - Peenemünde",
+    "text": "Vous développez l'A4b, version spatiale du V2 capable d'atteindre l'orbite. Mais la guerre se termine avant les premiers tests. Cette technologie révolutionnera l'après-guerre.",
+    "formula": "A4b : première fusée orbitale théorique",
+    "choices": [
+      { "text": "A. Cacher les plans pour l'après-guerre", "next": "document_work" },
+      { "text": "B. Proposer la technologie aux Alliés", "next": "surrender_us" },
+      { "text": "C. Détruire les preuves compromettantes", "next": "post_war" }
+    ],
+    "progress": 38
+  },
+
+  "document_work": {
+    "title": "L'Archive Secrète",
+    "year": "1945 - Alpes bavaroises",
+    "text": "Vous cachez soigneusement 14 tonnes de documents techniques dans une mine abandonnée. Cette documentation complète sur la technologie des fusées sera votre monnaie d'échange avec les Alliés.",
+    "choices": [
+      { "text": "A. Négocier avec les Américains", "next": "surrender_us" },
+      { "text": "B. Attendre le meilleur offrant", "next": "post_war" }
+    ],
+    "progress": 40
+  },
+
+  "post_war": {
+    "title": "Chapitre 3 : Renaissance",
+    "year": "1946 - Nouveau Monde",
+    "text": "La guerre est finie. Vous devez choisir votre camp dans le nouveau monde bipolaire. Vos fusées peuvent servir la paix ou préparer la prochaine guerre. L'avenir de l'humanité dépend de vos choix.",
+    "choices": [
+      { "text": "A. Rejoindre le programme américain", "next": "surrender_us" },
+      { "text": "B. Travailler pour l'Union Soviétique", "next": "soviet_program" },
+      { "text": "C. Créer un programme spatial international", "next": "joint_project" },
+      { "text": "D. Développer un programme spatial civil", "next": "civil_space" }
+    ],
+    "progress": 42
+  },
+
+  "surrender_us": {
+    "title": "Opération Paperclip",
+    "year": "1945 - Nouveau-Mexique, USA",
+    "text": "Vous et votre équipe vous rendez aux Américains. Transférés aux États-Unis, vous commencez à travailler sur des missiles balistiques, avec la promesse secrète de développer des fusées spatiales.",
+    "choices": [
+      { "text": "A. Se concentrer sur les applications militaires", "next": "focus_military" },
+      { "text": "B. Lancer une campagne publique pour l'espace", "next": "space_campaign" },
+      { "text": "C. Développer une fusée à usage scientifique", "next": "scientific_rocket" },
+      { "text": "D. Préparer une proposition pour un satellite", "next": "satellite_proposal" }
+    ],
+    "progress": 40
+  },
+
+  "focus_military": {
+    "title": "Redstone et Atlas",
+    "year": "1950 - Alabama",
+    "text": "Vous développez les missiles Redstone et participez au programme Atlas. Ces ICBM protègent l'Amérique mais votre rêve spatial reste en suspens. La Guerre Froide dicte vos priorités.",
+    "choices": [
+      { "text": "A. Intégrer des capacités spatiales aux missiles", "next": "satellite_proposal" },
+      { "text": "B. Attendre une opportunité politique", "next": "sputnik_shock" },
+      { "text": "C. Faire du lobbying pour un programme spatial", "next": "space_campaign" },
+      { "text": "D. Développer des fusées civiles en parallèle", "next": "scientific_rocket" }
+    ],
+    "progress": 45
+  },
+
+  "scientific_rocket": {
+    "title": "Jupiter-C : La Voie Détournée",
+    "year": "1955 - Cap Canaveral",
+    "text": "Votre fusée Jupiter-C, officiellement pour la recherche scientifique, peut secrètement mettre un satellite en orbite. Vous attendez l'autorisation politique qui ne vient pas.",
+    "formula": "Jupiter-C : capable d'orbite mais interdit de lancer",
+    "choices": [
+      { "text": "A. Lancer en secret un satellite américain", "next": "jupiter_c" },
+      { "text": "B. Attendre l'autorisation officielle", "next": "sputnik_shock" },
+      { "text": "C. Proposer une mission lunaire", "next": "lunar_rocket" },
+      { "text": "D. Développer une fusée plus puissante", "next": "new_rocket" }
+    ],
+    "progress": 48
+  },
+
+  "satellite_proposal": {
+    "title": "Vanguard vs Jupiter",
+    "year": "1955 - Washington",
+    "text": "Votre proposition de satellite avec Jupiter-C concurrence le projet Vanguard de la Marine. Les tensions interservices retardent la décision américaine.",
+    "choices": [
+      { "text": "A. Collaborer avec l'équipe Vanguard", "next": "vanguard" },
+      { "text": "B. Faire cavalier seul avec Jupiter-C", "next": "scientific_rocket" },
+      { "text": "C. Attendre que les Soviétiques agissent", "next": "sputnik_shock" }
+    ],
+    "progress": 47
+  },
+
+  "space_campaign": {
+    "title": "L'Appel des Étoiles",
+    "year": "1952 - USA",
+    "text": "Votre livre \"L'Exploration de Mars\" et vos apparitions télévisées dans l'émission de Disney popularisent l'idée des voyages spatiaux. Le public américain rêve maintenant d'espace.",
+    "choices": [
+      { "text": "A. Pousser pour un programme spatial civil", "next": "civil_space" },
+      { "text": "B. Travailler avec l'armée sur un ICBM", "next": "icbm" },
+      { "text": "C. Développer un concept de station spatiale", "next": "space_station" },
+      { "text": "D. Concevoir une fusée lunaire", "next": "lunar_rocket" }
+    ],
+    "progress": 45
+  },
+
+  "civil_space": {
+    "title": "NASA : L'Agence des Rêves",
+    "year": "1958 - Washington",
+    "text": "Votre plaidoyer pour un programme spatial civil aboutit. La NASA naît de vos efforts et de la pression de Spoutnik. L'espace devient officiellement pacifique.",
+    "choices": [
+      { "text": "A. Diriger le développement des fusées Saturn", "next": "saturn_development" },
+      { "text": "B. Créer le programme des vols habités", "next": "mercury_program" },
+      { "text": "C. Développer des satellites scientifiques", "next": "science_satellites" },
+      { "text": "D. Planifier une mission lunaire", "next": "lunar_rocket" }
+    ],
+    "progress": 50
+  },
+
+  "icbm": {
+    "title": "Atlas : Le Géant de l'Apocalypse",
+    "year": "1957 - Californie",
+    "text": "Votre fusée Atlas devient le premier ICBM américain opérationnel. Capable de détruire Moscou, elle peut aussi envoyer un homme en orbite. La dualité de la technologie spatiale.",
+    "choices": [
+      { "text": "A. Adapter Atlas pour le vol habité", "next": "mercury_program" },
+      { "text": "B. Développer une version civile", "next": "scientific_rocket" },
+      { "text": "C. Créer une fusée plus puissante", "next": "saturn_development" },
+      { "text": "D. Attendre l'occasion politique", "next": "sputnik_shock" }
+    ],
+    "progress": 48
+  },
+
+  "space_station": {
+    "title": "La Roue dans l'Espace",
+    "year": "1955 - USA",
+    "text": "Votre concept de station spatiale tournante fascine le public. Cette vision d'une base permanente en orbite inspire les futures missions habitées et la coopération internationale.",
+    "formula": "Station tournante : gravité artificielle par rotation",
+    "choices": [
+      { "text": "A. Développer des techniques de rendez-vous orbital", "next": "earth_rendezvous" },
+      { "text": "B. Concevoir des fusées cargo pour l'approvisionnement", "next": "saturn_development" },
+      { "text": "C. Proposer une coopération internationale", "next": "joint_project" }
+    ],
+    "progress": 52
+  },
+
+  "lunar_rocket": {
+    "title": "Nova : Le Mastodonte Lunaire",
+    "year": "1959 - Alabama",
+    "text": "Vous concevez Nova, une fusée gigantesque capable d'aller directement sur la Lune. Ce monstre de 90 mètres de haut défie les limites de l'ingénierie et du budget.",
+    "formula": "Nova : 8000 tonnes, vol direct vers la Lune",
+    "choices": [
+      { "text": "A. Convaincre la NASA d'adopter Nova", "next": "direct_ascent" },
+      { "text": "B. Proposer une alternative plus modeste", "next": "lor_approach" },
+      { "text": "C. Développer Nova étape par étape", "next": "saturn_development" },
+      { "text": "D. Attendre un engagement politique fort", "next": "kennedy_challenge" }
+    ],
+    "progress": 55
+  },
+
+  "sputnik_shock": {
+    "title": "Chapitre 3 : La Course Spatiale",
+    "year": "1957 - Cap Canaveral",
+    "text": "Le bip-bip de Spoutnik résonne dans le monde entier. Les Soviétiques ont pris une avance décisive. Le président Eisenhower exige une réponse immédiate.",
+    "formula": "Spoutnik : 58 cm de diamètre, 83 kg, 96 minutes/orbite",
+    "choices": [
+      { "text": "A. Accélérer le programme Vanguard", "next": "vanguard" },
+      { "text": "B. Proposer une nouvelle fusée plus puissante", "next": "new_rocket" },
+      { "text": "C. Miser sur une mission lunaire pour reprendre l'avantage", "next": "lunar_mission" }
+    ],
+    "progress": 50
+  },
+
+  "new_rocket": {
+    "title": "Saturn : La Réponse Américaine",
+    "year": "1958 - Alabama",
+    "text": "Face à Spoutnik, vous proposez la famille Saturn : des fusées modulaires et évolutives capables de missions lunaires. Ce concept révolutionnaire devient le cœur du programme spatial américain.",
+    "choices": [
+      { "text": "A. Développer Saturn I pour les missions orbitales", "next": "saturn_development" },
+      { "text": "B. Concevoir directement Saturn V pour la Lune", "next": "lunar_rocket" },
+      { "text": "C. Tester d'abord avec des missions automatiques", "next": "science_satellites" }
+    ],
+    "progress": 53
+  },
+
+  "lunar_mission": {
+    "title": "Pari Lunaire",
+    "year": "1958 - Washington",
+    "text": "Vous proposez audacieusement de viser directement la Lune pour dépasser les Soviétiques. Cette vision ambitieuse séduit mais nécessite des ressources colossales.",
+    "choices": [
+      { "text": "A. Développer un programme lunaire complet", "next": "kennedy_challenge" },
+      { "text": "B. Commencer par des sondes automatiques", "next": "lunar_lander" },
+      { "text": "C. Proposer une coopération internationale", "next": "joint_project" }
+    ],
+    "progress": 52
+  },
+
+  "vanguard": {
+    "title": "Le Fiasco de Vanguard",
+    "year": "1957 - Cap Canaveral",
+    "text": "Sous pression, le lancement de Vanguard est précipité. La fusée explose au décollage sous les caméras du monde entier. Les médias l'appellent \"Kaputnik\" et \"Flopnik\".",
+    "choices": [
+      { "text": "A. Prendre le risque de lancer Jupiter-C", "next": "jupiter_c" },
+      { "text": "B. Revoir complètement la conception", "next": "redesign" }
+    ],
+    "progress": 52
+  },
+
+  "redesign": {
+    "title": "Retour à la Planche à Dessin",
+    "year": "1958 - Cap Canaveral",
+    "text": "L'échec de Vanguard vous force à tout repenser. Cette approche méthodique prend du temps mais aboutit à des fusées plus fiables. La qualité l'emporte sur la vitesse.",
+    "choices": [
+      { "text": "A. Tester exhaustivement avant de lancer", "next": "scientific_rocket" },
+      { "text": "B. Adopter une approche modulaire", "next": "saturn_development" },
+      { "text": "C. Intégrer les leçons de l'échec", "next": "jupiter_c" },
+      { "text": "D. Développer des systèmes redondants", "next": "new_rocket" }
+    ],
+    "progress": 50
+  },
+
+  "jupiter_c": {
+    "title": "Explorer 1",
+    "year": "1958 - Floride",
+    "text": "Malgré les risques, vous lancez la fusée Jupiter-C avec le satellite Explorer 1. Le succès est total : les États-Unis entrent dans l'ère spatiale et découvrent les ceintures de radiation de Van Allen.",
+    "choices": [
+      { "text": "A. Proposer un programme habité", "next": "manned_program" },
+      { "text": "B. Développer des satellites scientifiques", "next": "science_satellites" },
+      { "text": "C. Travailler sur un atterrisseur lunaire", "next": "lunar_lander" }
+    ],
+    "progress": 55
+  },
+
+  "science_satellites": {
+    "title": "Les Yeux dans l'Espace",
+    "year": "1959 - Cap Canaveral",
+    "text": "Vos satellites scientifiques révolutionnent la météorologie, les communications et l'observation de la Terre. L'espace devient utile au quotidien, justifiant les investissements.",
+    "choices": [
+      { "text": "A. Lancer des sondes d'exploration planétaire", "next": "planetary_probes" },
+      { "text": "B. Utiliser les satellites pour les vols habités", "next": "manned_program" }
+    ],
+    "progress": 55
+  },
+
+  "lunar_lander": {
+    "title": "Surveyor : Premiers Pas Lunaires",
+    "year": "1960 - Jet Propulsion Laboratory",
+    "text": "Vos sondes Surveyor explorent la surface lunaire, préparant les futurs alunissages habités. Ces robots pionniers prouvent que la Lune peut accueillir des visiteurs terrestres.",
+    "formula": "Surveyor : atterrissage en douceur sur la Lune",
+    "choices": [
+      { "text": "A. Préparer les sites d'alunissage d'Apollo", "next": "apollo_sites" },
+      { "text": "B. Concevoir une base lunaire automatisée", "next": "lunar_base" }
+    ],
+    "progress": 58
+  },
+
+  "saturn_development": {
+    "title": "Saturn : La Famille Royale",
+    "year": "1960 - Alabama",
+    "text": "Vous développez la famille Saturn : Saturn I pour les tests, Saturn IB pour les missions orbitales, Saturn V pour la Lune. Cette approche modulaire révolutionne l'industrie spatiale.",
+    "formula": "Saturn V : 3000 tonnes, 111 mètres, destination Lune",
+    "choices": [
+      { "text": "A. Tester Saturn I avec des charges utiles lourdes", "next": "saturn_testing" },
+      { "text": "B. Accélérer le développement de Saturn V", "next": "saturn_v_rush" },
+      { "text": "C. Intégrer Saturn au programme Apollo", "next": "kennedy_challenge" }
+    ],
+    "progress": 62
+  },
+
+  "kennedy_challenge": {
+    "title": "Le Défi de la Décennie",
+    "year": "1961 - Washington",
+    "text": "Après le vol de Gagarine, le président Kennedy lance un défi historique : \"Avant la fin de cette décennie, faire atterrir un homme sur la Lune et le ramener sain et sauf sur Terre\".",
+    "choices": [
+      { "text": "A. Adopter l'approche du Rendez-vous Orbital Lunaire (LOR)", "next": "lor_approach" },
+      { "text": "B. Choisir le Vol Direct", "next": "direct_ascent" },
+      { "text": "C. Proposer une base lunaire permanente", "next": "lunar_base" }
+    ],
+    "progress": 65
+  },
+
+  "direct_ascent": {
+    "title": "Nova : La Voie Directe",
+    "year": "1962 - Alabama",
+    "text": "Vous choisissez le vol direct avec la fusée géante Nova. Simple conceptuellement mais techniquement titanesque, cette approche nécessite des ressources colossales.",
+    "formula": "Nova : 8000 tonnes au décollage, vol direct Terre-Lune",
+    "choices": [
+      { "text": "A. Développer Nova étape par étape", "next": "nova_development" },
+      { "text": "B. Créer des moteurs F-1 géants", "next": "f1_engines" },
+      { "text": "C. Reconsidérer l'approche LOR plus économique", "next": "lor_approach" }
+    ],
+    "progress": 68
+  },
+
+  "lunar_base": {
+    "title": "Horizon : La Base Permanente",
+    "year": "1962 - Houston",
+    "text": "Vous proposez non seulement d'aller sur la Lune mais d'y rester. Le projet Horizon prévoit une base lunaire permanente dès 1968. Ambitieux mais peut-être trop précoce.",
+    "choices": [
+      { "text": "A. Commencer par des missions d'exploration", "next": "lunar_surveys" },
+      { "text": "B. Développer des technologies de survie lunaire", "next": "lunar_technology" },
+      { "text": "C. Se concentrer d'abord sur un simple alunissage", "next": "lor_approach" }
+    ],
+    "progress": 68
+  },
+
+  "lor_approach": {
+    "title": "L'Élégante Solution",
+    "year": "1962 - Houston",
+    "text": "Le Rendez-vous Orbital Lunaire (LOR) est choisi : un module de commande en orbite lunaire et un module lunaire dédié à l'atterrissage. Cette solution économise du poids mais nécessite un rendez-vous orbital complexe à 380 000 km de la Terre.",
+    "formula": "LOR : économie de 15 tonnes par rapport au vol direct",
+    "choices": [
+      { "text": "A. Développer le module lunaire (LEM)", "next": "lem_development" },
+      { "text": "B. Tester d'abord le rendez-vous orbital terrestre", "next": "earth_rendezvous" },
+      { "text": "C. Améliorer la fiabilité du moteur du LEM", "next": "lem_engine" }
+    ],
+    "progress": 70
+  },
+
+  "earth_rendezvous": {
+    "title": "Gemini : École du Rendez-vous",
+    "year": "1964 - Cap Kennedy",
+    "text": "Le programme Gemini enseigne les techniques de rendez-vous orbital essentielles pour Apollo. Ces missions d'entraînement prouvent que deux vaisseaux peuvent se retrouver dans l'espace.",
+    "formula": "Gemini : maîtrise du rendez-vous orbital",
+    "choices": [
+      { "text": "A. Perfectionner les techniques d'amarrage", "next": "docking_mastery" },
+      { "text": "B. Tester les sorties spatiales", "next": "spacewalk_training" },
+      { "text": "C. Préparer les équipages lunaires", "next": "apollo_training" },
+      { "text": "D. Développer le module lunaire", "next": "lem_development" }
+    ],
+    "progress": 72
+  },
+
+  "lem_engine": {
+    "title": "Le Moteur Lunaire",
+    "year": "1964 - Bethpage",
+    "text": "Vous développez le moteur du module lunaire : hypergolique, démarrage garanti, poussée variable. Ce petit moteur doit fonctionner parfaitement car il n'y a pas de seconde chance sur la Lune.",
+    "formula": "Moteur LEM : hypergolique, fiabilité 99.9%",
+    "choices": [
+      { "text": "A. Tester exhaustivement chaque moteur", "next": "engine_testing" },
+      { "text": "B. Améliorer la poussée variable", "next": "throttling_system" },
+      { "text": "C. Intégrer au développement complet du LEM", "next": "lem_development" }
+    ],
+    "progress": 73
+  },
+
+  "lem_development": {
+    "title": "L'Araignée Lunaire",
+    "year": "1965 - Californie",
+    "text": "Le module lunaire (LEM) prend forme : un véhicule fragile aux jambes grêles, sans aérodynamisme, conçu uniquement pour fonctionner dans le vide spatial. Les tests révèlent des problèmes de stabilité.",
+    "choices": [
+      { "text": "A. Renforcer la structure", "next": "strengthen_structure" },
+      { "text": "B. Simplifier le design", "next": "simplify_design" },
+      { "text": "C. Ajouter des rétrofusées supplémentaires", "next": "add_thrusters" }
+    ],
+    "progress": 73
+  },
+
+  "strengthen_structure": {
+    "title": "Le LEM Renforcé",
+    "year": "1966 - Bethpage",
+    "text": "Vous renforcez la structure du LEM pour résister aux contraintes lunaires. Plus lourd mais plus robuste, il gagne en fiabilité ce qu'il perd en performance.",
+    "choices": [
+      { "text": "A. Compenser par un moteur plus puissant", "next": "powerful_engine" },
+      { "text": "B. Alléger d'autres composants", "next": "weight_reduction" },
+      { "text": "C. Accepter une charge utile réduite", "next": "reduced_payload" }
+    ],
+    "progress": 74
+  },
+
+  "simplify_design": {
+    "title": "La Beauté de la Simplicité",
+    "year": "1966 - Bethpage",
+    "text": "Vous simplifiez le design du LEM : moins de systèmes, moins de pannes possibles. Cette philosophie minimaliste crée un véhicule robuste et fiable.",
+    "choices": [
+      { "text": "A. Éliminer tous les systèmes non essentiels", "next": "minimal_lem" },
+      { "text": "B. Garder des systèmes de secours critiques", "next": "essential_backup" },
+      { "text": "C. Tester la version simplifiée", "next": "simplified_testing" }
+    ],
+    "progress": 75
+  },
+
+  "add_thrusters": {
+    "title": "Contrôle de Précision",
+    "year": "1966 - Bethpage",
+    "text": "Vous ajoutez des rétrofusées de contrôle d'attitude au LEM pour un pilotage précis. Ces petits moteurs permettront aux astronautes d'éviter les obstacles lors de l'alunissage.",
+    "choices": [
+      { "text": "A. Développer un système de pilotage automatique", "next": "autopilot_system" },
+      { "text": "B. Entraîner les pilotes au contrôle manuel", "next": "manual_training" },
+      { "text": "C. Créer un système hybride auto/manuel", "next": "hybrid_control" }
+    ],
+    "progress": 76
+  },
+
+  "apollo_1": {
+    "title": "Le Feu d'Apollo 1",
+    "year": "1967 - Cap Kennedy",
+    "text": "Lors d'un test au sol, un incendie éclate dans la capsule Apollo 1, tuant les astronautes Grissom, White et Chaffee. L'enquête révèle de graves défauts de conception.",
+    "choices": [
+      { "text": "A. Arrêter le programme le temps de tout revoir", "next": "halt_program" },
+      { "text": "B. Accélérer les modifications", "next": "accelerate_changes" },
+      { "text": "C. Changer le mélange gazeux pour l'oxygène pur", "next": "change_atmosphere" }
+    ],
+    "progress": 75
+  },
+
+  "halt_program": {
+    "title": "La Pause Nécessaire",
+    "year": "1967 - Houston",
+    "text": "Vous arrêtez temporairement Apollo pour réviser complètement la sécurité. Cette décision courageuse sauve des vies mais retarde l'objectif lunaire de Kennedy.",
+    "choices": [
+      { "text": "A. Reprendre avec des normes de sécurité renforcées", "next": "safety_first" },
+      { "text": "B. Redesigner la capsule Apollo", "next": "apollo_redesign" },
+      { "text": "C. Former une commission de sécurité permanente", "next": "safety_commission" }
+    ],
+    "progress": 72
+  },
+
+  "accelerate_changes": {
+    "title": "La Course contre la Montre",
+    "year": "1968 - Houston",
+    "text": "Vous accélérez les modifications d'Apollo pour respecter l'échéance de Kennedy. Cette approche risquée pourrait sauver le programme ou causer d'autres accidents.",
+    "choices": [
+      { "text": "A. Tester en parallèle du développement", "next": "parallel_testing" },
+      { "text": "B. Se concentrer sur les modifications critiques", "next": "critical_fixes" },
+      { "text": "C. Augmenter massivement les équipes", "next": "massive_teams" }
+    ],
+    "progress": 76
+  },
+
+  "change_atmosphere": {
+    "title": "L'Air de l'Espace",
+    "year": "1968 - Houston",
+    "text": "Vous remplacez l'atmosphère pure oxygène d'Apollo par un mélange moins inflammable. Cette modification majeure nécessite de repenser tous les systèmes de support vie.",
+    "choices": [
+      { "text": "A. Adopter un mélange azote-oxygène", "next": "nitrogen_oxygen" },
+      { "text": "B. Développer de nouveaux matériaux ignifuges", "next": "fireproof_materials" },
+      { "text": "C. Créer des systèmes de détection d'incendie", "next": "fire_detection" }
+    ],
+    "progress": 77
+  },
+
+  "neil_armstrong": {
+    "title": "Chapitre 4 : Un Petit Pas",
+    "year": "1969 - Mer de la Tranquillité",
+    "text": "Vous êtes <span class=\"character\">Neil Armstrong</span>, commandant d'Apollo 11. Après quatre jours de voyage, vous vous apprêtez à piloter le module lunaire Eagle vers la surface de la Lune. Les alarmes informatiques retentissent.",
+    "formula": "Code 1202 : dépassement de capacité de l'ordinateur",
+    "choices": [
+      { "text": "A. Continuer - l'ordinateur priorise les fonctions critiques", "next": "continue_landing" },
+      { "text": "B. Basculer sur le système manuel", "next": "manual_control" },
+      { "text": "C. Demander conseil à Houston", "next": "ask_houston" }
+    ],
+    "progress": 90
+  },
+
+  "manual_control": {
+    "title": "Le Pilote Aux Commandes",
+    "year": "1969 - Descente Lunaire",
+    "text": "Vous basculez en pilotage manuel, faisant confiance à votre expérience de pilote d'essai. Mais sans assistance informatique dans cet environnement inconnu, la tâche devient titanesque.",
+    "choices": [
+      { "text": "A. Vous fier uniquement à vos instruments", "next": "instruments_only" },
+      { "text": "B. Utiliser les repères visuels lunaires", "next": "visual_navigation" },
+      { "text": "C. Combiner manuel et automatique", "next": "hybrid_landing" }
+    ],
+    "progress": 92
+  },
+
+  "ask_houston": {
+    "title": "Houston, Nous Avons une Alarme",
+    "year": "1969 - Communication Terre-Lune",
+    "text": "Vous demandez conseil à Houston. La communication prend 1.3 secondes dans chaque sens. Le contrôle de mission analyse rapidement : \"Go for landing, Eagle.\"",
+    "choices": [
+      { "text": "A. Faire confiance à Houston et continuer", "next": "continue_landing" },
+      { "text": "B. Demander plus de détails", "next": "need_details" },
+      { "text": "C. Prendre votre propre décision", "next": "manual_control" }
+    ],
+    "progress": 91
+  },
+
+  "continue_landing": {
+    "title": "La Descente Périlleuse",
+    "year": "20 juillet 1969",
+    "text": "Vous ignorez les alarmes et continuez la descente. Mais le site prévu est jonché de rochers. Le carburant s'épuise : il ne reste que 30 secondes de marge.",
+    "choices": [
+      { "text": "A. Atterrir malgré les rochers", "next": "land_rocks" },
+      { "text": "B. Chercher un site plus sûr", "next": "find_safer_site" },
+      { "text": "C. Atterrir en mode manuel pur", "next": "full_manual" }
+    ],
+    "progress": 95
+  },
+
+  "land_rocks": {
+    "title": "L'Alunissage Rocheux",
+    "year": "1969 - Mer de la Tranquillité",
+    "text": "Vous posez Eagle parmi les rochers. Un pied du module lunaire se pose sur un rocher, inclinant dangereusement le véhicule. Vous êtes sur la Lune, mais le décollage sera périlleux.",
+    "choices": [
+      { "text": "A. Sortir immédiatement avant que le LEM ne bascule", "next": "emergency_eva" },
+      { "text": "B. Analyser la stabilité du véhicule", "next": "stability_check" },
+      { "text": "C. Contacter Houston pour évaluation", "next": "houston_assessment" }
+    ],
+    "progress": 96
+  },
+
+  "full_manual": {
+    "title": "Le Pilote Absolu",
+    "year": "1969 - Surface Lunaire",
+    "text": "Vous pilotez Eagle entièrement à la main, faisant abstraction de tous les systèmes automatiques. Cet exploit de pilotage vous permet de poser le module dans un cratère étroit mais sûr.",
+    "choices": [
+      { "text": "A. Célébrer cet exploit technique", "next": "technical_triumph" },
+      { "text": "B. Vérifier tous les systèmes après cet atterrissage musclé", "next": "post_landing_check" },
+      { "text": "C. Sortir immédiatement profiter du succès", "next": "immediate_eva" }
+    ],
+    "progress": 98
+  },
+
+  "find_safer_site": {
+    "title": "Tranquility Base",
+    "year": "20 juillet 1969 - 20:17 UTC",
+    "text": "Vous survolez le champ de rochers et trouvez un site dégagé. Avec seulement 17 secondes de carburant restant, vous posez l'Eagle : \"Houston, ici la base de la Tranquillité. L'Aigle a atterri.\"",
+    "choices": [
+      { "text": "A. Sortir immédiatement", "next": "immediate_eva" },
+      { "text": "B. Vérifier tous les systèmes d'abord", "next": "check_systems" },
+      { "text": "C. Prendre un repos avant la sortie", "next": "rest_first" },
+      { "text": "D. Préparer le discours historique", "next": "prepare_speech" }
+    ],
+    "progress": 97
+  },
+
+  "immediate_eva": {
+    "title": "L'Impatience Lunaire",
+    "year": "1969 - Surface Lunaire",
+    "text": "Impatient de marcher sur la Lune, vous sortez immédiatement. Cette précipitation crée quelques problèmes techniques mais n'entame pas la joie historique de ce moment.",
+    "choices": [
+      { "text": "A. Prononcer votre phrase historique", "next": "historic_words" },
+      { "text": "B. Planter le drapeau américain", "next": "plant_flag" },
+      { "text": "C. Collecter des échantillons lunaires", "next": "collect_samples" },
+      { "text": "D. Prendre des photos historiques", "next": "historic_photos" }
+    ],
+    "progress": 98
+  },
+
+  "check_systems": {
+    "title": "La Prudence du Commandant",
+    "year": "1969 - Module Lunaire",
+    "text": "Vous vérifiez méthodiquement tous les systèmes avant la sortie. Cette procédure rigoureuse garantit la sécurité mais retarde légèrement l'EVA historique.",
+    "choices": [
+      { "text": "A. Tout est nominal, procéder à la sortie", "next": "nominal_eva" },
+      { "text": "B. Corriger les petits défauts détectés", "next": "fix_issues" },
+      { "text": "C. Contacter Houston pour validation", "next": "houston_validation" },
+      { "text": "D. Préparer l'équipement de sortie", "next": "eva_equipment" }
+    ],
+    "progress": 97
+  },
+
+  "rest_first": {
+    "title": "Le Repos du Guerrier",
+    "year": "1969 - Surface Lunaire",
+    "text": "Vous prenez quelques heures de repos après l'alunissage stressant. Ce repos récupérateur vous permet d'être en parfaite forme pour l'EVA historique.",
+    "choices": [
+      { "text": "A. Rêver de la surface lunaire", "next": "lunar_dreams" },
+      { "text": "B. Réviser les procédures d'EVA", "next": "eva_review" },
+      { "text": "C. Discuter avec Buzz de l'histoire en cours", "next": "historic_moment" }
+    ],
+    "progress": 97
+  },
+
+  "prepare_speech": {
+    "title": "Les Mots de l'Histoire",
+    "year": "1969 - Module Lunaire",
+    "text": "Vous peaufinez votre phrase historique : \"C'est un petit pas pour l'homme, un bond de géant pour l'humanité.\" Ces mots résonneront à travers les âges.",
+    "choices": [
+      { "text": "A. Garder la phrase simple et mémorable", "next": "simple_words" },
+      { "text": "B. Ajouter une dimension spirituelle", "next": "spiritual_dimension" },
+      { "text": "C. Mentionner l'équipe et les nations", "next": "team_recognition" },
+      { "text": "D. Improviser selon l'émotion du moment", "next": "improvised_words" }
+    ],
+    "progress": 98
+  },
+
+  "victory": {
+    "title": "Épilogue : Un Bond pour l'Humanité",
+    "year": "21 juillet 1969 - 02:56 UTC",
+    "text": "Félicitations ! Vous avez réussi à suivre le chemin qui a mené l'humanité sur la Lune. À 02h56 UTC, vous descendez l'échelle du module lunaire et posez le pied sur la surface poussiéreuse :<br><br>\"C'est un petit pas pour l'homme, un bond de géant pour l'humanité.\"<br><br>600 millions de personnes ont suivi cet instant historique à la télévision. Vous avez accompli ce qui semblait impossible.",
+    "formula": "Mission accomplie : 400 000 km parcourus",
+    "ending": "success",
+    "progress": 100
+  },
+
+  "give_up_early": {
+    "title": "Le Rêve Oublié",
+    "year": "1910 - Kaluga",
+    "text": "Découragé par le manque de soutien, vous rangez vos cahiers. Vos idées révolutionnaires restent dans l'ombre pendant des décennies. L'histoire des fusées prend un autre chemin.",
+    "ending": "failure",
+    "progress": 10
+  },
+
+  "dead_end_1": {
+    "title": "Impasse : Les Limites de la Technologie",
+    "text": "Votre approche, bien que brillante, se heurte aux limites technologiques de votre époque. Les matériaux, la propulsion et l'électronique ne sont pas encore au niveau requis. Le rêve lunaire devra attendre une autre génération.",
+    "formula": "L'innovation doit attendre son heure",
+    "ending": "failure",
+    "progress": 25
+  },
+
+  "dead_end_2": {
+    "title": "Impasse : L'Erreur Technique",
+    "text": "Une erreur de conception minime a eu des conséquences catastrophiques. En ingénierie spatiale, chaque détail compte. L'échec vous rappelle que la route vers les étoiles est pavée de défis immenses.",
+    "formula": "Dans l'espace, les erreurs ne pardonnent pas",
+    "ending": "failure",
+    "progress": 45
+  },
+
+  "dead_end_3": {
+    "title": "Impasse : Le Facteur Humain",
+    "text": "Malgré vos prouesses techniques, les tensions politiques, les contraintes budgétaires et les rivalités personnelles ont eu raison du programme. Parfois, les plus grands obstacles ne sont pas techniques mais humains.",
+    "formula": "Les étoiles attendent que l'humanité soit prête",
+    "ending": "failure",
+    "progress": 65
+  },
+
+  "manned_program": {
+    "title": "Mercury : Les Premiers Héros",
+    "year": "1959 - Houston",
+    "text": "Vous lancez le programme Mercury pour envoyer des Américains dans l'espace. Sept pilotes d'essai courageux deviennent les premiers astronautes. L'aventure humaine spatiale commence.",
+    "formula": "Mercury : 1 homme, 1 orbite, 1 espoir",
+    "choices": [
+      { "text": "A. Accélérer pour battre les Soviétiques", "next": "mercury_rush" },
+      { "text": "B. Prendre le temps de bien faire", "next": "mercury_methodical" },
+      { "text": "C. Développer Gemini pour deux astronautes", "next": "gemini_program" }
+    ],
+    "progress": 58
+  },
+
+  "docking_mastery": {
+    "title": "Maîtrise de l'Amarrage",
+    "year": "1966 - Orbite Terrestre",
+    "text": "Les missions Gemini perfectionnent l'amarrage orbital. Cette technique délicate, essentielle pour Apollo, devient routine grâce à l'entraînement intensif.",
+    "choices": [
+      { "text": "A. Développer l'amarrage automatique", "next": "auto_docking" },
+      { "text": "B. Perfectionner le pilotage manuel", "next": "manual_docking" },
+      { "text": "C. Créer des systèmes redondants", "next": "backup_docking" },
+      { "text": "D. Tester dans des conditions difficiles", "next": "extreme_docking" }
+    ],
+    "progress": 70
+  },
+
+  "spacewalk_training": {
+    "title": "L'École de l'EVA",
+    "year": "1965 - Houston",
+    "text": "Gemini développe les techniques de sortie spatiale essentielles pour Apollo. Les astronautes apprennent à travailler dans le vide, à assembler des structures, à réparer des équipements.",
+    "choices": [
+      { "text": "A. Maîtriser la maniabilité en apesanteur", "next": "zero_g_maneuvering" },
+      { "text": "B. Développer des outils spatiaux", "next": "space_tools" },
+      { "text": "C. Tester les scaphandres lunaires", "next": "lunar_suits" },
+      { "text": "D. Préparer les procédures lunaires", "next": "lunar_procedures" }
+    ],
+    "progress": 68
+  },
+
+  "apollo_training": {
+    "title": "Formation des Héros Lunaires",
+    "year": "1967 - Houston",
+    "text": "Vous créez le programme de formation Apollo le plus intensif jamais conçu : géologie lunaire, pilotage du LEM, procédures d'urgence, survie spatiale.",
+    "choices": [
+      { "text": "A. Se concentrer sur le pilotage du LEM", "next": "lem_piloting" },
+      { "text": "B. Former en géologie lunaire", "next": "lunar_geology" },
+      { "text": "C. Développer l'esprit d'équipe", "next": "team_building" },
+      { "text": "D. Préparer aux situations d'urgence", "next": "emergency_training" }
+    ],
+    "progress": 72
+  },
+
+  "safety_first": {
+    "title": "Sécurité Avant Tout",
+    "year": "1968 - Houston",
+    "text": "Après Apollo 1, vous instaurez une culture de sécurité absolue. Chaque décision est évaluée sous l'angle du risque. La prudence devient la règle d'or.",
+    "choices": [
+      { "text": "A. Créer des check-lists exhaustives", "next": "comprehensive_checklists" },
+      { "text": "B. Former des équipes de sécurité", "next": "safety_teams" },
+      { "text": "C. Développer des systèmes d'éjection", "next": "escape_systems" },
+      { "text": "D. Tester tous les scénarios d'urgence", "next": "emergency_scenarios" }
+    ],
+    "progress": 74
+  },
+
+  "apollo_redesign": {
+    "title": "Apollo Phoenix",
+    "year": "1968 - Houston",
+    "text": "Vous redesignez complètement la capsule Apollo : nouveau système atmosphérique, matériaux ignifuges, écoutilles à ouverture rapide. Apollo renaît de ses cendres.",
+    "formula": "Apollo Block II : sécurité renforcée, fiabilité accrue",
+    "choices": [
+      { "text": "A. Tester exhaustivement la nouvelle capsule", "next": "block_ii_testing" },
+      { "text": "B. Former les astronautes aux nouveaux systèmes", "next": "new_systems_training" },
+      { "text": "C. Accélérer la production", "next": "accelerated_production" },
+      { "text": "D. Valider par des vols d'essai", "next": "test_flights" }
+    ],
+    "progress": 76
+  },
+
+  "historic_words": {
+    "title": "Les Mots Éternels",
+    "year": "1969 - Premier Pas",
+    "text": "Vous prononcez la phrase qui marquera l'Histoire : \"C'est un petit pas pour l'homme, un bond de géant pour l'humanité.\" Ces mots résonneront à travers les âges.",
+    "choices": [
+      { "text": "A. Planter le drapeau américain", "next": "plant_flag" },
+      { "text": "B. Collecter des échantillons scientifiques", "next": "collect_samples" },
+      { "text": "C. Prendre des photos historiques", "next": "historic_photos" },
+      { "text": "D. Appeler le Président Nixon", "next": "presidential_call" }
+    ],
+    "progress": 99
+  },
+
+  "plant_flag": {
+    "title": "Old Glory sur la Lune",
+    "year": "1969 - Plantation du Drapeau",
+    "text": "Vous et Buzz plantez le drapeau américain sur la surface lunaire. Ce geste symbolique marque la victoire des États-Unis dans la course spatiale.",
+    "choices": [
+      { "text": "A. Prendre une photo emblématique", "next": "flag_photo" },
+      { "text": "B. Faire un salut militaire", "next": "military_salute" },
+      { "text": "C. Lire une déclaration solennelle", "next": "solemn_declaration" },
+      { "text": "D. Continuer l'exploration", "next": "continue_exploration" }
+    ],
+    "progress": 99
+  },
+
+  "collect_samples": {
+    "title": "Trésors Lunaires",
+    "year": "1969 - Collecte Scientifique",
+    "text": "Vous collectez précieusement des échantillons de sol et de roches lunaires. Ces 21,5 kg de matière extraterrestre révolutionneront notre compréhension de la Lune.",
+    "choices": [
+      { "text": "A. Documenter chaque échantillon", "next": "sample_documentation" },
+      { "text": "B. Chercher des signes de vie", "next": "life_search" },
+      { "text": "C. Étudier la composition du sol", "next": "soil_analysis" },
+      { "text": "D. Préparer le retour sur Terre", "next": "return_preparation" }
+    ],
+    "progress": 99
+  },
+
+  "historic_photos": {
+    "title": "Images pour l'Éternité",
+    "year": "1969 - Photographie Lunaire",
+    "text": "Vous prenez les photos les plus célèbres de l'Histoire : Buzz sur la Lune, la Terre depuis l'espace, vos premiers pas. Ces images inspireront l'humanité pour toujours.",
+    "choices": [
+      { "text": "A. Photographier la Terre depuis la Lune", "next": "earthrise_photo" },
+      { "text": "B. Documenter la surface lunaire", "next": "surface_documentation" },
+      { "text": "C. Créer un panorama lunaire", "next": "lunar_panorama" },
+      { "text": "D. Finir l'exploration et rentrer", "next": "eva_completion" }
+    ],
+    "progress": 99
+  },
+
+  "presidential_call": {
+    "title": "Appel depuis la Lune",
+    "year": "1969 - Communication Présidentielle",
+    "text": "Le Président Nixon vous appelle depuis le Bureau Oval : \"Neil et Buzz, je vous parle depuis le Bureau Oval de la Maison Blanche. C'est certainement le plus extraordinaire appel téléphonique jamais passé...\"",
+    "choices": [
+      { "text": "A. Répondre au nom de l'humanité entière", "next": "humanity_response" },
+      { "text": "B. Remercier l'équipe de Houston", "next": "houston_thanks" },
+      { "text": "C. Promettre de ramener des preuves", "next": "evidence_promise" },
+      { "text": "D. Exprimer l'honneur de cette mission", "next": "mission_honor" }
+    ],
+    "progress": 99
+  },
+
+  "simple_words": {
+    "title": "Simplicité Éloquente",
+    "year": "1969 - Mots Éternels",
+    "text": "Vous gardez votre phrase simple et mémorable. Ces mots simples mais profonds résonneront à travers les âges et inspireront l'humanité.",
+    "choices": [
+      { "text": "A. Prononcer avec conviction", "next": "victory" },
+      { "text": "B. Laisser l'émotion transparaître", "next": "victory" },
+      { "text": "C. Parler pour toute l'humanité", "next": "victory" },
+      { "text": "D. Marquer l'Histoire", "next": "victory" }
+    ],
+    "progress": 99
+  },
+
+  "spiritual_dimension": {
+    "title": "Dimension Spirituelle",
+    "year": "1969 - Élévation",
+    "text": "Vous ajoutez une dimension spirituelle à vos mots, reconnaissant la grandeur de ce moment qui dépasse la technique pour toucher à l'essence humaine.",
+    "choices": [
+      { "text": "A. Remercier la Providence", "next": "victory" },
+      { "text": "B. Honorer les sacrifices", "next": "victory" },
+      { "text": "C. Célébrer l'esprit humain", "next": "victory" },
+      { "text": "D. Unir l'humanité dans ce moment", "next": "victory" }
+    ],
+    "progress": 99
+  },
+
+  "team_recognition": {
+    "title": "Reconnaissance d'Équipe",
+    "year": "1969 - Humilité",
+    "text": "Vos mots reconnaissent que ce succès appartient à toute l'équipe Apollo et à toutes les nations qui ont contribué à ce rêve partagé.",
+    "choices": [
+      { "text": "A. Honorer les 400 000 personnes d'Apollo", "next": "victory" },
+      { "text": "B. Remercier les pionniers", "next": "victory" },
+      { "text": "C. Saluer la coopération internationale", "next": "victory" },
+      { "text": "D. Dédier ce moment à l'humanité", "next": "victory" }
+    ],
+    "progress": 99
+  },
+
+  "improvised_words": {
+    "title": "Improvisation Inspirée",
+    "year": "1969 - Spontanéité",
+    "text": "Vous décidez d'improviser selon l'émotion du moment, laissant votre cœur guider vos mots. Cette spontanéité donne une authenticité particulière à l'instant.",
+    "choices": [
+      { "text": "A. Exprimer votre émerveillement", "next": "victory" },
+      { "text": "B. Partager votre humilité", "next": "victory" },
+      { "text": "C. Transmettre votre joie", "next": "victory" },
+      { "text": "D. Laisser parler votre cœur", "next": "victory" }
+    ],
+    "progress": 99
+  },
+
+  "lunar_simulation": {
+    "title": "Simulation Lunaire",
+    "year": "1967 - Laboratoires de Test",
+    "text": "Vous créez des simulateurs reproduisant fidèlement les conditions lunaires : gravité réduite, vide spatial, température extrême. Ces simulations révolutionnaires préparent les astronautes et testent les équipements.",
+    "formula": "Gravité lunaire : 1/6 de la gravité terrestre",
+    "choices": [
+      { "text": "A. Simuler la gravité réduite par suspension", "next": "intensive_testing" },
+      { "text": "B. Reproduire le vide spatial en chambre", "next": "qualification_testing" },
+      { "text": "C. Tester les extrêmes thermiques", "next": "thermal_protection" },
+      { "text": "D. Valider tous les systèmes lunaires", "next": "lem_development" }
+    ],
+    "progress": 68
+  },
+
+  "mercury_program": {
+    "title": "Programme Mercury",
+    "year": "1959 - Cap Canaveral",
+    "text": "Vous lancez le programme Mercury pour envoyer le premier Américain dans l'espace. Cette capsule monoplace ouvre la voie spatiale américaine face à l'avance soviétique.",
+    "choices": [
+      { "text": "A. Voler rapidement pour battre les Soviétiques", "next": "mercury_rush" },
+      { "text": "B. Prendre le temps de sécuriser le programme", "next": "mercury_methodical" },
+      { "text": "C. Développer Gemini en parallèle", "next": "gemini_program" },
+      { "text": "D. Préparer déjà Apollo", "next": "apollo_early" }
+    ],
+    "progress": 35
+  },
+
+  "clean_nuclear": {
+    "title": "Nucléaire Propre",
+    "year": "1962 - Nevada",
+    "text": "Vous développez des moteurs nucléaires plus propres, réduisant les radiations et les déchets. Cette technologie avancée pourrait révolutionner les voyages interplanétaires.",
+    "choices": [
+      { "text": "A. Continuer malgré les difficultés", "next": "nuclear_push" },
+      { "text": "B. Réserver aux missions lointaines", "next": "mars_mission" },
+      { "text": "C. Garder le projet secret", "next": "classified_program" }
+    ],
+    "progress": 45
+  }
+}
