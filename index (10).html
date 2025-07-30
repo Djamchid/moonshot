@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livre dont vous êtes le Héros</title>
+    <style>
+        /* Base styles */
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box; /* Include padding in the element's total width and height */
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-size: 2em; /* Responsive font size */
+        }
+
+        #chapter-container {
+            background: #fff;
+            padding: 25px;
+            border-radius: 5px;
+            margin-bottom: 25px;
+            box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.05);
+        }
+
+        #chapter-title {
+            font-size: 1.8em;
+            color: #34495e;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        #chapter-year {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+        }
+
+        #chapter-text {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        #chapter-formula {
+            font-weight: bold;
+            color: #e67e22;
+            margin-bottom: 20px;
+        }
+
+        .choices {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .choice-button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            text-align: left;
+            transition: background-color 0.3s ease;
+            width: 100%; /* Ensure buttons take full width */
+            box-sizing: border-box;
+        }
+
+        .choice-button:hover {
+            background-color: #2980b9;
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            height: 25px;
+            overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background-color: #2ecc71;
+            text-align: center;
+            line-height: 25px;
+            color: white;
+            transition: width 0.5s ease-in-out;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .ending {
+            text-align: center;
+            padding: 30px;
+            border-radius: 5px;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 30px;
+            border: 2px solid;
+        }
+
+        .ending.success {
+            background-color: #d4edda;
+            color: #155724;
+            border-color: #28a745;
+        }
+
+        .ending.failure {
+            background-color: #f8d7da;
+            color: #721c24;
+            border-color: #dc3545;
+        }
+
+        .restart-button {
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+            background-color: #f39c12;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .restart-button:hover {
+            background-color: #e67e22;
+        }
+
+        /* Responsive adjustments */
+
+        /* For smaller screens (e.g., mobile phones) */
+        @media (max-width: 768px) {
+            body {
+                margin: 15px auto;
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            #chapter-title {
+                font-size: 1.5em;
+            }
+
+            .ending {
+                font-size: 1.2em;
+                padding: 20px;
+            }
+
+            .restart-button {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
+        }
+
+        /* For even smaller screens (e.g., older phones or very narrow views) */
+        @media (max-width: 480px) {
+            body {
+                margin: 10px auto;
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            #chapter-title {
+                font-size: 1.3em;
+            }
+
+            #chapter-year, #chapter-formula {
+                font-size: 0.8em;
+            }
+
+            .choice-button {
+                font-size: 0.9em;
+                padding: 10px 15px;
+            }
+
+            .ending {
+                font-size: 1em;
+                padding: 15px;
+            }
+
+            .progress-bar {
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>L'Odyssée de la Connaissance</h1>
+
+    <div class="progress-bar-container">
+        <div class="progress-bar" id="progress-bar">0%</div>
+    </div>
+
+    <div id="chapter-container">
+        <h2 id="chapter-title"></h2>
+        <p id="chapter-year"></p>
+        <p id="chapter-text"></p>
+        <p id="chapter-formula"></p>
+        <div class="choices" id="choices-container"></div>
+    </div>
+
+    <script>
+        let storyData = {};
+        let currentChapterKey = 'start'; // Clé du chapitre de début
+
+        const chapterTitleElement = document.getElementById('chapter-title');
+        const chapterYearElement = document.getElementById('chapter-year');
+        const chapterTextElement = document.getElementById('chapter-text');
+        const chapterFormulaElement = document.getElementById('chapter-formula');
+        const choicesContainer = document.getElementById('choices-container');
+        const progressBar = document.getElementById('progress-bar');
+        const chapterContainer = document.getElementById('chapter-container');
+
+        // Fonction pour charger les données JSON
+        async function loadStory() {
+            try {
+                // Chemin d'accès à votre fichier JSON.
+                // Si votre fichier s'appelle fermat-story-data (2).js, il faut le renommer en story.json
+                // et s'assurer qu'il contient juste l'objet JSON { "start": {...}, ... } sans 'var storyData ='.
+                const response = await fetch('story.json');
+                if (!response.ok) {
+                    throw new Error(`Erreur de chargement : ${response.statusText}`);
+                }
+                storyData = await response.json();
+                displayChapter(currentChapterKey);
+            } catch (error) {
+                console.error("Erreur lors du chargement de l'histoire :", error);
+                chapterContainer.innerHTML = `<p class="ending failure">Erreur lors du chargement de l'histoire. Veuillez vérifier le fichier JSON.</p>`;
+            }
+        }
+
+        // Fonction pour afficher un chapitre
+        function displayChapter(chapterKey) {
+            const chapter = storyData[chapterKey];
+            if (!chapter) {
+                console.error(`Chapitre '${chapterKey}' introuvable.`);
+                chapterContainer.innerHTML = `<p class="ending failure">Oups ! Ce chemin mène nulle part (chapitre introuvable).</p>`;
+                return;
+            }
+
+            // Mettre à jour la barre de progression
+            updateProgressBar(chapter.progress || 0);
+
+            chapterTitleElement.textContent = chapter.title;
+            chapterYearElement.textContent = chapter.year;
+            chapterTextElement.textContent = chapter.text;
+            chapterFormulaElement.textContent = chapter.formula || ''; // La formule peut être facultative
+
+            choicesContainer.innerHTML = ''; // Nettoyer les anciens choix
+
+            if (chapter.ending) {
+                // C'est une fin (succès ou échec)
+                const endingDiv = document.createElement('div');
+                endingDiv.className = `ending ${chapter.ending}`;
+                endingDiv.textContent = chapter.ending === 'success' ? 'FIN : SUCCÈS !' : 'FIN : ÉCHEC !';
+                choicesContainer.appendChild(endingDiv);
+
+                const restartButton = document.createElement('button');
+                restartButton.className = 'restart-button';
+                restartButton.textContent = 'Recommencer l\'aventure';
+                restartButton.onclick = restartStory;
+                choicesContainer.appendChild(restartButton);
+
+            } else {
+                // Afficher les choix normaux
+                chapter.choices.forEach(choice => {
+                    const button = document.createElement('button');
+                    button.className = 'choice-button';
+                    button.textContent = choice.text;
+                    button.onclick = () => choose(choice.next);
+                    choicesContainer.appendChild(button);
+                });
+            }
+        }
+
+        // Fonction pour gérer le choix du joueur
+        function choose(nextChapterKey) {
+            currentChapterKey = nextChapterKey;
+            displayChapter(currentChapterKey);
+            // Faire défiler la page vers le haut pour voir le nouveau chapitre
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Fonction pour mettre à jour la barre de progression
+        function updateProgressBar(progress) {
+            progressBar.style.width = `${progress}%`;
+            progressBar.textContent = `${progress}%`;
+        }
+
+        // Fonction pour redémarrer l'histoire
+        function restartStory() {
+            currentChapterKey = 'start';
+            displayChapter(currentChapterKey);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Charger l'histoire au chargement de la page
+        loadStory();
+    </script>
+</body>
+</html>
