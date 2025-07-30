@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Conquête de la Lune : 400 000 km d'Ambition</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 10px;
+            background: linear-gradient(135deg, #0a192f 0%, #1a3a5f 100%);
+            color: #e0f0ff;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(white, rgba(255,255,255,.2) 1px, transparent 2px),
+                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 1px);
+            background-size: 50px 50px, 30px 30px;
+            background-position: 0 0, 25px 25px;
+        }
+
+        .book-container {
+            background: rgba(15, 30, 50, 0.85);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin: 10px 0;
+            width: 100%;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(100, 180, 255, 0.2);
+        }
+
+        .chapter-header {
+            text-align: center;
+            color: #4fc3f7;
+            border-bottom: 3px solid #0288d1;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .chapter-header h1 {
+            font-size: 1.5rem;
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        .story-text {
+            line-height: 1.7;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .choices {
+            display: grid;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .choice-button {
+            padding: 15px;
+            background: linear-gradient(135deg, #1976d2 0%, #0d47a1 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            text-align: left;
+            line-height: 1.4;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            border: 1px solid rgba(100, 180, 255, 0.3);
+        }
+
+        .choice-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);
+            background: linear-gradient(135deg, #2196f3 0%, #0d47a1 100%);
+        }
+
+        .choice-button:active {
+            transform: translateY(0);
+        }
+
+        .tech-formula {
+            background: rgba(2, 119, 189, 0.2);
+            padding: 15px;
+            border-left: 4px solid #0288d1;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            font-size: 1rem;
+            overflow-x: auto;
+            white-space: nowrap;
+            border-radius: 4px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #01579b;
+            border-radius: 4px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4fc3f7 0%, #0288d1 100%);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .ending {
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .ending h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+
+        .success {
+            background: linear-gradient(135deg, #00c853 0%, #1b5e20 100%);
+            color: white;
+        }
+
+        .failure {
+            background: linear-gradient(135deg, #ff6b6b 0%, #c62828 100%);
+            color: white;
+        }
+
+        .restart-button {
+            background: #00c853;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 15px;
+            transition: background 0.3s ease;
+            font-weight: bold;
+        }
+
+        .restart-button:hover {
+            background: #009624;
+        }
+
+        .year {
+            font-size: 0.8rem;
+            color: #81d4fa;
+            text-align: center;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 50px;
+            color: #81d4fa;
+        }
+
+        .character {
+            font-weight: bold;
+            color: #4fc3f7;
+        }
+
+        /* Tablettes */
+        @media (max-width: 768px) {
+            body {
+                padding: 8px;
+            }
+
+            .book-container {
+                padding: 15px;
+                border-radius: 10px;
+                margin: 8px 0;
+            }
+
+            .chapter-header h1 {
+                font-size: 1.3rem;
+            }
+
+            .story-text {
+                font-size: 0.95rem;
+                text-align: left;
+            }
+
+            .choice-button {
+                padding: 12px;
+                font-size: 0.85rem;
+                min-height: 55px;
+            }
+
+            .tech-formula {
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Smartphones */
+        @media (max-width: 480px) {
+            body {
+                padding: 5px;
+                font-size: 14px;
+            }
+
+            .book-container {
+                padding: 12px;
+                border-radius: 8px;
+                margin: 5px 0;
+            }
+
+            .chapter-header {
+                padding-bottom: 10px;
+                margin-bottom: 15px;
+            }
+
+            .chapter-header h1 {
+                font-size: 1.2rem;
+                line-height: 1.2;
+            }
+
+            .story-text {
+                font-size: 0.9rem;
+                line-height: 1.6;
+                margin-bottom: 15px;
+                text-align: left;
+            }
+
+            .choices {
+                gap: 10px;
+                margin-top: 15px;
+            }
+
+            .choice-button {
+                padding: 10px;
+                font-size: 0.8rem;
+                min-height: 50px;
+                border-radius: 6px;
+            }
+
+            .choice-button:hover {
+                transform: none;
+            }
+
+            .tech-formula {
+                padding: 10px;
+                font-size: 0.85rem;
+                margin: 10px 0;
+                border-left-width: 3px;
+            }
+
+            .progress-bar {
+                height: 6px;
+                margin: 10px 0;
+            }
+
+            .ending {
+                padding: 15px;
+                margin: 15px 0;
+            }
+
+            .ending h2 {
+                font-size: 1.3rem;
+            }
+
+            .restart-button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .year {
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Très petits écrans */
+        @media (max-width: 320px) {
+            .chapter-header h1 {
+                font-size: 1.1rem;
+            }
+
+            .story-text {
+                font-size: 0.85rem;
+            }
+
+            .choice-button {
+                font-size: 0.75rem;
+                padding: 8px;
+                min-height: 45px;
+            }
+
+            .tech-formula {
+                font-size: 0.8rem;
+                padding: 8px;
+            }
+        }
+
+        /* Mode paysage sur mobile */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .book-container {
+                padding: 10px;
+            }
+
+            .chapter-header {
+                margin-bottom: 10px;
+            }
+
+            .story-text {
+                margin-bottom: 10px;
+            }
+
+            .choices {
+                gap: 8px;
+                margin-top: 10px;
+            }
+
+            .choice-button {
+                min-height: 40px;
+                padding: 8px;
+            }
+        }
+
+        /* Amélioration de l'accessibilité */
+        @media (prefers-reduced-motion: reduce) {
+            .choice-button {
+                transition: none;
+            }
+
+            .choice-button:hover {
+                transform: none;
+            }
+
+            .progress-fill {
+                transition: none;
+            }
+        }
+
+        /* Mode sombre système */
+        @media (prefers-color-scheme: dark) {
+            .book-container {
+                background: #0a192f;
+                color: #e0f0ff;
+            }
+
+            .chapter-header {
+                color: #4fc3f7;
+            }
+
+            .tech-formula {
+                background: rgba(2, 119, 189, 0.3);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="book-container">
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress" style="width: 0%"></div>
+        </div>
+        
+        <div id="story-content">
+            <div class="loading">Chargement du voyage lunaire...</div>
+        </div>
+    </div>
+
+    <script>
+        // Données du jeu
+        const storyData = {
+            start: {
+                title: "Prologue : Le Rêve Céleste",
+                year: "1903 - Kaluga, Russie",
+                text: `Vous êtes <span class="character">Konstantin Tsiolkovski</span>, enseignant solitaire et visionnaire. Dans votre atelier, vous contemplez les étoiles et imaginez des voyages interplanétaires. Votre équation fondamentale vient de naître : la clé mathématique de la propulsion par fusée.`,
+                formula: "Δv = vₑ ln(m₀/m₁) - L'équation de Tsiolkovski",
+                choices: [
+                    { text: "A. Publier immédiatement vos idées révolutionnaires", next: "publish_early" },
+                    { text: "B. Perfectionner la théorie avant de la partager", next: "refine_theory" },
+                    { text: "C. Chercher des soutiens financiers", next: "seek_funding" },
+                    { text: "D. Construire un prototype simple", next: "build_prototype" }
+                ],
+                progress: 5
+            },
+
+            publish_early: {
+                title: "Les Premiers Pas",
+                year: "1905 - Moscou",
+                text: `Votre publication dans "La Science et la Vie" crée un petit émoi dans la communauté scientifique. Certains vous traitent de rêveur, d'autres voient le potentiel de vos idées.`,
+                choices: [
+                    { text: "A. Faire une conférence publique pour défendre vos idées", next: "public_lecture" },
+                    { text: "B. Écrire un livre complet sur les voyages spatiaux", next: "write_book" },
+                    { text: "C. Travailler sur un moteur à réaction pratique", next: "jet_engine" },
+                    { text: "D. Abandonner face aux critiques", next: "give_up_early" }
+                ],
+                progress: 10
+            },
+
+            refine_theory: {
+                title: "Perfectionnement Théorique",
+                year: "1910 - Kaluga",
+                text: `Pendant sept ans, vous perfectionnez vos théories : systèmes de guidage, combinaisons spatiales, stations orbitales. Vos cahiers débordent d'innovations qui devanceront votre époque.`,
+                formula: "Concepts : multi-étages, carburant liquide, scaphandres",
+                choices: [
+                    { text: "A. Publier votre travail complet", next: "publish_complete" },
+                    { text: "B. Chercher des applications militaires pour financer vos recherches", next: "military_apps" },
+                    { text: "C. Envoyer vos travaux aux académies européennes", next: "european_academies" },
+                    { text: "D. Construire un laboratoire de recherche", next: "build_lab" }
+                ],
+                progress: 12
+            },
+
+            public_lecture: {
+                title: "Le Rêveur de Kaluga",
+                year: "1906 - Saint-Pétersbourg",
+                text: `Votre conférence publique attire une foule curieuse. Parmi les spectateurs, un jeune ingénieur allemand nommé Hermann Oberth prend des notes fiévreusement. Votre vision inspire une nouvelle génération.`,
+                choices: [
+                    { text: "A. Prendre Oberth comme étudiant", next: "oberth_student" },
+                    { text: "B. Fonder une société d'astronautique", next: "found_society" },
+                    { text: "C. Travailler sur un démonstrateur technique", next: "tech_demonstrator" },
+                    { text: "D. Se concentrer sur la propulsion électrique", next: "electric_propulsion" }
+                ],
+                progress: 15
+            },
+
+            oberth_student: {
+                title: "Le Disciple",
+                year: "1907 - Kaluga",
+                text: `Oberth passe un an avec vous à développer vos idées. Ensemble, vous explorez les fusées à propergol liquide. Mais la Première Guerre mondiale approche...`,
+                choices: [
+                    { text: "A. L'encourager à retourner en Allemagne développer vos idées", next: "oberth_germany" },
+                    { text: "B. Travailler sur des applications pacifiques", next: "peaceful_apps" },
+                    { text: "C. Chercher des financements pour un projet commun", next: "joint_project" },
+                    { text: "D. Préparer un traité complet sur l'astronautique", next: "treatise" }
+                ],
+                progress: 18
+            },
+
+            oberth_germany: {
+                title: "La Graine Semée",
+                year: "1914 - Allemagne",
+                text: `Oberth retourne en Allemagne avec vos idées. La guerre éclate, et il est recruté pour travailler sur les armes. Vos théories prennent une tournure militaire inattendue.`,
+                choices: [
+                    { text: "A. Protester contre l'utilisation militaire", next: "protest_military" },
+                    { text: "B. Continuer vos recherches théoriques", next: "continue_research" },
+                    { text: "C. Travailler secrètement sur des projets civils", next: "secret_civil" },
+                    { text: "D. Abandonner temporairement", next: "temporary_abandon" }
+                ],
+                progress: 20
+            },
+
+            wernher_von_braun: {
+                title: "Chapitre 2 : Les Armes de la Nuit",
+                year: "1937 - Peenemünde, Allemagne",
+                text: `Vous êtes maintenant <span class="character">Wernher von Braun</span>, jeune prodige de 25 ans. Sous le régime nazi, vous dirigez le développement de l'arme secrète : l'Aggregat 4, plus tard connu sous le nom de V2.`,
+                formula: "V2 : 320 km de portée, altitude 80 km, vitesse Mach 4",
+                choices: [
+                    { text: "A. Maximiser la performance technique", next: "max_performance" },
+                    { text: "B. Saboter discrètement le programme", next: "sabotage" },
+                    { text: "C. Préparer l'après-guerre et les applications spatiales", next: "post_war" },
+                    { text: "D. Obéir aveuglément aux ordres", next: "blind_obedience" }
+                ],
+                progress: 30
+            },
+
+            max_performance: {
+                title: "L'Arme de Représailles",
+                year: "1944 - Allemagne",
+                text: `Votre équipe crée une arme révolutionnaire. Plus de 3 000 V2 seront lancés, faisant des milliers de victimes. Mais techniquement, vous avez prouvé que les fusées peuvent atteindre l'espace.`,
+                choices: [
+                    { text: "A. Planifier secrètement la reddition aux Américains", next: "surrender_us" },
+                    { text: "B. Développer une version spatiale", next: "space_version" },
+                    { text: "C. Documenter tout votre travail pour l'après-guerre", next: "document_work" },
+                    { text: "D. Obéir aux ordres jusqu'au bout", next: "obey_orders" }
+                ],
+                progress: 35
+            },
+
+            surrender_us: {
+                title: "Opération Paperclip",
+                year: "1945 - Nouveau-Mexique, USA",
+                text: `Vous et votre équipe vous rendez aux Américains. Transférés aux États-Unis, vous commencez à travailler sur des missiles balistiques, avec la promesse secrète de développer des fusées spatiales.`,
+                choices: [
+                    { text: "A. Se concentrer sur les applications militaires", next: "focus_military" },
+                    { text: "B. Lancer une campagne publique pour l'espace", next: "space_campaign" },
+                    { text: "C. Développer une fusée à usage scientifique", next: "scientific_rocket" },
+                    { text: "D. Préparer une proposition pour un satellite", next: "satellite_proposal" }
+                ],
+                progress: 40
+            },
+
+            space_campaign: {
+                title: "L'Appel des Étoiles",
+                year: "1952 - USA",
+                text: `Votre livre "L'Exploration de Mars" et vos apparitions télévisées dans l'émission de Disney popularisent l'idée des voyages spatiaux. Le public américain rêve maintenant d'espace.`,
+                choices: [
+                    { text: "A. Pousser pour un programme spatial civil", next: "civil_space" },
+                    { text: "B. Travailler avec l'armée sur un ICBM", next: "icbm" },
+                    { text: "C. Développer un concept de station spatiale", next: "space_station" },
+                    { text: "D. Concevoir une fusée lunaire", next: "lunar_rocket" }
+                ],
+                progress: 45
+            },
+
+            sputnik_shock: {
+                title: "Chapitre 3 : La Course Spatiale",
+                year: "1957 - Cap Canaveral",
+                text: `Le bip-bip de Spoutnik résonne dans le monde entier. Les Soviétiques ont pris une avance décisive. Le président Eisenhower exige une réponse immédiate.`,
+                formula: "Spoutnik : 58 cm de diamètre, 83 kg, 96 minutes/orbite",
+                choices: [
+                    { text: "A. Accélérer le programme Vanguard", next: "vanguard" },
+                    { text: "B. Proposer une nouvelle fusée plus puissante", next: "new_rocket" },
+                    { text: "C. Copier la technologie soviétique", next: "copy_soviets" },
+                    { text: "D. Miser sur une mission lunaire pour reprendre l'avantage", next: "lunar_mission" }
+                ],
+                progress: 50
+            },
+
+            vanguard: {
+                title: "Le Fiasco de Vanguard",
+                year: "1957 - Cap Canaveral",
+                text: `Sous pression, le lancement de Vanguard est précipité. La fusée explose au décollage sous les caméras du monde entier. Les médias l'appellent "Kaputnik" et "Flopnik".`,
+                choices: [
+                    { text: "A. Prendre le risque de lancer Jupiter-C", next: "jupiter_c" },
+                    { text: "B. Revoir complètement la conception", next: "redesign" },
+                    { text: "C. Demander plus de financement", next: "more_funding" },
+                    { text: "D. Blâmer les ingénieurs", next: "blame_engineers" }
+                ],
+                progress: 52
+            },
+
+            jupiter_c: {
+                title: "Explorer 1",
+                year: "1958 - Floride",
+                text: `Malgré les risques, vous lancez la fusée Jupiter-C avec le satellite Explorer 1. Le succès est total : les États-Unis entrent dans l'ère spatiale et découvrent les ceintures de radiation de Van Allen.`,
+                choices: [
+                    { text: "A. Proposer un programme habité", next: "manned_program" },
+                    { text: "B. Développer des satellites scientifiques", next: "science_satellites" },
+                    { text: "C. Créer une agence spatiale civile", next: "nasa_creation" },
+                    { text: "D. Travailler sur un atterrisseur lunaire", next: "lunar_lander" }
+                ],
+                progress: 55
+            },
+
+            nasa_creation: {
+                title: "La Naissance de la NASA",
+                year: "1958 - Washington",
+                text: `Votre plaidoyer aboutit à la création de la NASA. Vous êtes nommé directeur du Marshall Space Flight Center. Votre rêve d'exploration spatiale devient une réalité institutionnelle.`,
+                choices: [
+                    { text: "A. Développer la famille de fusées Saturn", next: "saturn_development" },
+                    { text: "B. Lancer le programme Mercury pour les vols habités", next: "mercury_program" },
+                    { text: "C. Planifier une mission circumlunaire", next: "circumlunar" },
+                    { text: "D. Travailler sur un moteur nucléaire", next: "nuclear_engine" }
+                ],
+                progress: 60
+            },
+
+            kennedy_challenge: {
+                title: "Le Défi de la Décennie",
+                year: "1961 - Washington",
+                text: `Après le vol de Gagarine, le président Kennedy lance un défi historique : "Avant la fin de cette décennie, faire atterrir un homme sur la Lune et le ramener sain et sauf sur Terre".`,
+                choices: [
+                    { text: "A. Adopter l'approche du Rendez-vous Orbital Lunaire (LOR)", next: "lor_approach" },
+                    { text: "B. Choisir le Vol Direct", next: "direct_ascent" },
+                    { text: "C. Développer un vaisseau nucléaire", next: "nuclear_ship" },
+                    { text: "D. Proposer une base lunaire permanente", next: "lunar_base" }
+                ],
+                progress: 65
+            },
+
+            lor_approach: {
+                title: "L'Élégante Solution",
+                year: "1962 - Houston",
+                text: `Le Rendez-vous Orbital Lunaire (LOR) est choisi : un module de commande en orbite lunaire et un module lunaire dédié à l'atterrissage. Cette solution économise du poids mais nécessite un rendez-vous orbital complexe à 380 000 km de la Terre.`,
+                formula: "LOR : économie de 15 tonnes par rapport au vol direct",
+                choices: [
+                    { text: "A. Développer le module lunaire (LEM)", next: "lem_development" },
+                    { text: "B. Tester d'abord le rendez-vous orbital terrestre", next: "earth_rendezvous" },
+                    { text: "C. Améliorer la fiabilité du moteur du LEM", next: "lem_engine" },
+                    { text: "D. Ajouter un module de secours", next: "backup_module" }
+                ],
+                progress: 70
+            },
+
+            lem_development: {
+                title: "L'Araignée Lunaire",
+                year: "1965 - Californie",
+                text: `Le module lunaire (LEM) prend forme : un véhicule fragile aux jambes grêles, sans aérodynamisme, conçu uniquement pour fonctionner dans le vide spatial. Les tests révèlent des problèmes de stabilité.`,
+                choices: [
+                    { text: "A. Renforcer la structure", next: "strengthen_structure" },
+                    { text: "B. Simplifier le design", next: "simplify_design" },
+                    { text: "C. Ajouter des rétrofusées supplémentaires", next: "add_thrusters" },
+                    { text: "D. Repenser complètement l'atterrisseur", next: "redesign_lander" }
+                ],
+                progress: 73
+            },
+
+            apollo_1: {
+                title: "Le Feu d'Apollo 1",
+                year: "1967 - Cap Kennedy",
+                text: `Lors d'un test au sol, un incendie éclate dans la capsule Apollo 1, tuant les astronautes Grissom, White et Chaffee. L'enquête révèle de graves défauts de conception.`,
+                choices: [
+                    { text: "A. Arrêter le programme le temps de tout revoir", next: "halt_program" },
+                    { text: "B. Accélérer les modifications", next: "accelerate_changes" },
+                    { text: "C. Changer le mélange gazeux pour l'oxygène pur", next: "change_atmosphere" },
+                    { text: "D. Blâmer les astronautes", next: "blame_astronauts" }
+                ],
+                progress: 75
+            },
+
+            neil_armstrong: {
+                title: "Chapitre 4 : Un Petit Pas",
+                year: "1969 - Mer de la Tranquillité",
+                text: `Vous êtes <span class="character">Neil Armstrong</span>, commandant d'Apollo 11. Après quatre jours de voyage, vous vous apprêtez à piloter le module lunaire Eagle vers la surface de la Lune. Les alarmes informatiques retentissent.`,
+                formula: "Code 1202 : dépassement de capacité de l'ordinateur",
+                choices: [
+                    { text: "A. Annuler l'atterrissage", next: "abort_landing" },
+                    { text: "B. Continuer - l'ordinateur priorise les fonctions critiques", next: "continue_landing" },
+                    { text: "C. Basculer sur le système manuel", next: "manual_control" },
+                    { text: "D. Demander conseil à Houston", next: "ask_houston" }
+                ],
+                progress: 90
+            },
+
+            continue_landing: {
+                title: "La Descente Périlleuse",
+                year: "20 juillet 1969",
+                text: `Vous ignorez les alarmes et continuez la descente. Mais le site prévu est jonché de rochers. Le carburant s'épuise : il ne reste que 30 secondes de marge.`,
+                choices: [
+                    { text: "A. Atterrir malgré les rochers", next: "land_rocks" },
+                    { text: "B. Chercher un site plus sûr", next: "find_safer_site" },
+                    { text: "C. Atterrir en mode manuel pur", next: "full_manual" },
+                    { text: "D. Annuler au dernier moment", next: "last_second_abort" }
+                ],
+                progress: 95
+            },
+
+            find_safer_site: {
+                title: "Tranquility Base",
+                year: "20 juillet 1969 - 20:17 UTC",
+                text: `Vous survolez le champ de rochers et trouvez un site dégagé. Avec seulement 17 secondes de carburant restant, vous posez l'Eagle : "Houston, ici la base de la Tranquillité. L'Aigle a atterri."`,
+                choices: [
+                    { text: "A. Sortir immédiatement", next: "immediate_eva" },
+                    { text: "B. Vérifier tous les systèmes d'abord", next: "check_systems" },
+                    { text: "C. Prendre un repos avant la sortie", next: "rest_first" },
+                    { text: "D. Préparer le discours historique", next: "prepare_speech" }
+                ],
+                progress: 97
+            },
+
+            victory: {
+                title: "Épilogue : Un Bond pour l'Humanité",
+                year: "21 juillet 1969 - 02:56 UTC",
+                text: `Félicitations ! Vous avez réussi à suivre le chemin qui a mené l'humanité sur la Lune. À 02h56 UTC, vous descendez l'échelle du module lunaire et posez le pied sur la surface poussiéreuse :<br><br>
+                "C'est un petit pas pour l'homme, un bond de géant pour l'humanité."<br><br>
+                600 millions de personnes ont suivi cet instant historique à la télévision. Vous avez accompli ce qui semblait impossible.`,
+                formula: "Mission accomplie : 400 000 km parcourus",
+                ending: "success",
+                progress: 100
+            },
+
+            // Fins alternatives
+            give_up_early: {
+                title: "Le Rêve Oublié",
+                year: "1910 - Kaluga",
+                text: `Découragé par le manque de soutien, vous rangez vos cahiers. Vos idées révolutionnaires restent dans l'ombre pendant des décennies. L'histoire des fusées prend un autre chemin.`,
+                ending: "failure",
+                progress: 10
+            },
+
+            apollo_13: {
+                title: "Succès de l'Échec",
+                year: "1970 - Espace lointain",
+                text: `Votre mission Apollo 13 a subi une explosion en route vers la Lune. Grâce à votre sang-froid et l'ingéniosité des équipes au sol, vous avez réussi à ramener l'équipage sain et sauf. Un échec qui reste dans les mémoires comme un triomphe de l'ingénierie.`,
+                formula: "Houston, nous avons eu un problème",
+                ending: "failure",
+                progress: 85
+            },
+
+            soviet_victory: {
+                title: "La Lune Rouge",
+                year: "1968 - Mer de la Tranquillité",
+                text: `Les Soviétiques vous ont devancé ! Alexei Leonov devient le premier homme à marcher sur la Lune. Malgré vos efforts, la course spatiale est perdue. Le drapeau rouge flotte sur la Lune.`,
+                ending: "failure",
+                progress: 75
+            },
+
+            budget_cuts: {
+                title: "La Fin du Rêve",
+                year: "1968 - Washington",
+                text: `Face aux coûts exorbitants et à la guerre du Vietnam, le Congrès annule le programme Apollo. Vos années d'efforts n'aboutiront pas. La Lune restera hors de portée pour cette génération.`,
+                ending: "failure",
+                progress: 70
+            },
+
+            // Dead ends
+            dead_end_1: {
+                title: "Impasse : Les Limites de la Technologie",
+                text: `Votre approche, bien que brillante, se heurte aux limites technologiques de votre époque. Les matériaux, la propulsion et l'électronique ne sont pas encore au niveau requis. Le rêve lunaire devra attendre une autre génération.`,
+                formula: "L'innovation doit attendre son heure",
+                ending: "failure",
+                progress: 25
+            },
+
+            dead_end_2: {
+                title: "Impasse : L'Erreur Technique",
+                text: `Une erreur de conception minime a eu des conséquences catastrophiques. En ingénierie spatiale, chaque détail compte. L'échec vous rappelle que la route vers les étoiles est pavée de défis immenses.`,
+                formula: "Dans l'espace, les erreurs ne pardonnent pas",
+                ending: "failure",
+                progress: 45
+            },
+
+            dead_end_3: {
+                title: "Impasse : Le Facteur Humain",
+                text: `Malgré vos prouesses techniques, les tensions politiques, les contraintes budgétaires et les rivalités personnelles ont eu raison du programme. Parfois, les plus grands obstacles ne sont pas techniques mais humains.`,
+                formula: "Les étoiles attendent que l'humanité soit prête",
+                ending: "failure",
+                progress: 65
+            }
+        };
+
+        // Variable pour stocker les données du jeu
+        let story = null;
+        let currentNode = 'start';
+
+        // Fonction pour afficher un nœud
+        function displayNode(nodeId) {
+            if (!story || !story[nodeId]) {
+                console.error('Nœud non trouvé:', nodeId);
+                return;
+            }
+
+            const node = story[nodeId];
+            const content = document.getElementById('story-content');
+            const progress = document.getElementById('progress');
+            
+            progress.style.width = (node.progress || 0) + '%';
+            
+            if (node.ending) {
+                // Fin du jeu
+                content.innerHTML = `
+                    <div class="chapter-header">
+                        <h1>${node.title}</h1>
+                        ${node.year ? `<div class="year">${node.year}</div>` : ''}
+                    </div>
+                    <div class="story-text">${node.text}</div>
+                    ${node.formula ? `<div class="tech-formula">${node.formula}</div>` : ''}
+                    <div class="ending ${node.ending}">
+                        <h2>${node.ending === 'success' ? '🚀 VICTOIRE ! 🚀' : '💥 ÉCHEC 💥'}</h2>
+                        <p>${node.ending === 'success' ? 'Vous avez accompli le plus grand exploit de l\'humanité !' : 'La Lune reste hors de portée... pour cette fois.'}</p>
+                        <button class="restart-button" onclick="restart()">Recommencer l'aventure</button>
+                    </div>
+                `;
+            } else if (node.choices) {
+                // Nœud normal avec choix
+                content.innerHTML = `
+                    <div class="chapter-header">
+                        <h1>${node.title}</h1>
+                        ${node.year ? `<div class="year">${node.year}</div>` : ''}
+                    </div>
+                    <div class="story-text">${node.text}</div>
+                    ${node.formula ? `<div class="tech-formula">${node.formula}</div>` : ''}
+                    <div class="choices">
+                        ${node.choices.map(choice => 
+                            `<button class="choice-button" onclick="makeChoice('${choice.next}')">${choice.text}</button>`
+                        ).join('')}
+                    </div>
+                `;
+            } else {
+                // Nœud sans choix (ne devrait pas arriver)
+                content.innerHTML = `
+                    <div class="chapter-header">
+                        <h1>${node.title}</h1>
+                        ${node.year ? `<div class="year">${node.year}</div>` : ''}
+                    </div>
+                    <div class="story-text">${node.text}</div>
+                    ${node.formula ? `<div class="tech-formula">${node.formula}</div>` : ''}
+                `;
+            }
+        }
+
+        // Fonction pour faire un choix
+        function makeChoice(nextNode) {
+            currentNode = nextNode;
+            displayNode(currentNode);
+        }
+
+        // Fonction pour recommencer
+        function restart() {
+            currentNode = 'start';
+            displayNode(currentNode);
+        }
+
+        // Initialiser le jeu
+        function initGame() {
+            story = storyData;
+            displayNode(currentNode);
+        }
+
+        // Charger le jeu au démarrage
+        initGame();
+    </script>
+</body>
+</html>
